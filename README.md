@@ -70,17 +70,3 @@ Build trust with transparency in donations
 
 Ensure no one feels alone in a crisis
 
-🫱 Closing: A Lifeline
-Sahaya is not just an app—it’s a lifeline and a community.
-It’s a mission to bring help when needed most.
-We’re excited to build this and make a real impact.
-
-Let me know if you want me to:
-
-Turn this into a one-pager summary
-
-Help you build a live pitch script
-
-Format it as a PDF or document submission
-
-Just say the word!
