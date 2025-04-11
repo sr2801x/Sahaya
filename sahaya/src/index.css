@@ -1,0 +1,161 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 222 47% 11%;
+    --foreground: 213 31% 91%;
+
+    --card: 222 47% 15%;
+    --card-foreground: 213 31% 91%;
+
+    --popover: 222 47% 11%;
+    --popover-foreground: 213 31% 91%;
+
+    --primary: 196 100% 47%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 260 100% 69%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 223 47% 20%;
+    --muted-foreground: 215 20% 70%;
+
+    --accent: 164 100% 48%;
+    --accent-foreground: 222 47% 11%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 222 47% 20%;
+    --input: 222 47% 20%;
+    --ring: 196 100% 47%;
+
+    --radius: 0.5rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  
+  html, body {
+    @apply overflow-x-hidden;
+  }
+
+  body {
+    @apply bg-sahaya-dark text-foreground font-inter;
+    background-image: 
+      radial-gradient(circle at 15% 50%, rgba(0, 166, 251, 0.08) 0%, transparent 25%),
+      radial-gradient(circle at 85% 30%, rgba(123, 97, 255, 0.08) 0%, transparent 25%);
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-poppins font-bold;
+  }
+}
+
+@layer components {
+  .glow-border {
+    box-shadow: 0 0 5px theme('colors.sahaya.blue'), 
+                0 0 10px rgba(0, 166, 251, 0.3);
+  }
+  
+  .tech-card {
+    @apply bg-gradient-to-br from-card to-transparent backdrop-blur-sm 
+           border border-sahaya-blue/20 rounded-lg p-6 
+           transition-all duration-300 hover:border-sahaya-blue/40;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3),
+                inset 0 0 0 1px rgba(255, 255, 255, 0.05);
+  }
+  
+  .glass-panel {
+    @apply bg-white/5 backdrop-blur-md border border-white/10 rounded-xl;
+  }
+  
+  .neon-text {
+    @apply font-bold;
+    text-shadow: 0 0 5px currentColor, 
+                 0 0 10px currentColor, 
+                 0 0 20px currentColor;
+  }
+  
+  .circuit-bg {
+    background-image: linear-gradient(to right, rgba(10, 17, 40, 0.95), rgba(10, 17, 40, 0.95)), 
+                      url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M15 10h5v5h-5v-5zm10 0h5v5h-5v-5zm10 0h5v5h-5v-5zm10 0h5v5h-5v-5zm10 0h5v5h-5v-5zM5 20h5v5H5v-5zm10 0h5v5h-5v-5zm10 0h5v5h-5v-5zm10 0h5v5h-5v-5zm10 0h5v5h-5v-5zm10 0h5v5h-5v-5zM5 30h5v5H5v-5zm10 0h5v5h-5v-5zm10 0h5v5h-5v-5zm10 0h5v5h-5v-5zm10 0h5v5h-5v-5zm10 0h5v5h-5v-5zM5 40h5v5H5v-5zm10 0h5v5h-5v-5zm10 0h5v5h-5v-5zm10 0h5v5h-5v-5zm10 0h5v5h-5v-5zm10 0h5v5h-5v-5zM5 50h5v5H5v-5zm10 0h5v5h-5v-5zm10 0h5v5h-5v-5zm10 0h5v5h-5v-5zm10 0h5v5h-5v-5zm10 0h5v5h-5v-5zM5 60h5v5H5v-5zm10 0h5v5h-5v-5zm10 0h5v5h-5v-5zm10 0h5v5h-5v-5zm10 0h5v5h-5v-5zm10 0h5v5h-5v-5zM5 70h5v5H5v-5zm10 0h5v5h-5v-5zm10 0h5v5h-5v-5zm10 0h5v5h-5v-5zm10 0h5v5h-5v-5zm10 0h5v5h-5v-5zM5 80h5v5H5v-5zm10 0h5v5h-5v-5zm10 0h5v5h-5v-5zm10 0h5v5h-5v-5zm10 0h5v5h-5v-5zm10 0h5v5h-5v-5zM5 90h5v5H5v-5zm10 0h5v5h-5v-5zm10 0h5v5h-5v-5zm10 0h5v5h-5v-5zm10 0h5v5h-5v-5zm10 0h5v5h-5v-5z' fill='%2300a6fb' fill-opacity='0.05' fill-rule='evenodd'/%3E%3C/svg%3E");
+  }
+  
+  .shimmer-effect {
+    @apply relative overflow-hidden;
+  }
+  
+  .shimmer-effect::after {
+    content: "";
+    @apply absolute top-0 left-0 w-full h-full;
+    background: linear-gradient(90deg, 
+                transparent, 
+                rgba(255, 255, 255, 0.05), 
+                transparent);
+    transform: translateX(-100%);
+    animation: shimmer 2.5s infinite;
+  }
+}
+
+.hexagon-grid {
+  @apply relative z-0 opacity-20;
+  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 0l14.85 14.85 14.85-14.85H30zM0 30l14.85 14.85L0 59.7V30zm0-30h29.7L14.85 14.85 0 0zm30 59.7v-29.7l14.85 14.85L30 59.7zm0 0v-29.7l14.85 14.85L30 59.7zM59.7 30v29.7L44.85 44.85 59.7 30zm0-30v29.7L44.85 14.85 59.7 0z' fill='%237B61FF' fill-opacity='0.1' fill-rule='evenodd'/%3E%3C/svg%3E");
+}
+
+#root {
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
+  text-align: left;
+}
+
+.safety-pulse {
+  animation: pulse-safety 2s infinite;
+}
+
+@keyframes pulse-safety {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(0, 245, 212, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 0 15px rgba(0, 245, 212, 0);
+  }
+}
+
+.alert-pulse {
+  animation: pulse-alert 2s infinite;
+}
+
+@keyframes pulse-alert {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(255, 107, 107, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 0 15px rgba(255, 107, 107, 0);
+  }
+}
+
+.notification-dot {
+  @apply w-2 h-2 rounded-full bg-red-500;
+  animation: notification-pulse 1.5s infinite;
+}
+
+@keyframes notification-pulse {
+  0%, 100% {
+    opacity: 0.5;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.5);
+  }
+}
